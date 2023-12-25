@@ -18,7 +18,7 @@ def gaussian_elimination(left, right):
 	res = [1 for l in left[0]]
 	for r in range(len(res)-1, -1, -1):
 		m, acc = mat[r], mat[r][-1]
-		for s in range(len(m)-2, r, -1): acc -= m[s]*res[s]
+		for s in range(len(res)-1, r, -1): acc -= m[s]*res[s]
 		res[r] = acc/m[r]
 	return res
 
